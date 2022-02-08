@@ -3,7 +3,14 @@ btnNew.addEventListener("click",fetchCreateProduct);
 
 
 async function fetchCreateProduct() {
-	const newProduct = {name: "miguelinnnnnnn",price: 25.5, category:"vegetable"};
+	//const newProduct = {name: "miguelinnnnnnn",price: 25.5, category:"vegetable"};
+	const nameField = document.getElementById("txtName").value;
+	const priceField = document.getElementById("txtPrice").value;
+	const categoryField = document.getElementById("txtCategory").value;
+	console.log(nameField + " " + priceField + " " + categoryField");
+	
+	const newProduct = {name: nameField, price: priceField, category:categoryField};
+	
     const response = await fetch(
       "https://rest-atlas-test.herokuapp.com/products",
       {
