@@ -7,7 +7,7 @@ async function fetchCreateProduct() {
 	const nameField = document.getElementById("txtName").value;
 	const priceField = document.getElementById("txtPrice").value;
 	const categoryField = document.getElementById("txtCategory").value;
-	console.log(nameField + " " + priceField + " " + categoryField");
+	console.log(nameField + " " + priceField + " " + categoryField);
 	
 	const newProduct = {name: nameField, price: priceField, category:categoryField};
 	
