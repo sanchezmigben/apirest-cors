@@ -27,7 +27,7 @@ async function fetchCreateProduct() {
         console.log(data);
         const span = document.getElementById('productSpan');
         let product = data;
-	span.innerHTML = `${product.name} ${product.price} ${product.category}`; 
+	span.innerHTML = `${product._id} ${product.name} ${product.price} ${product.category}`; 
         
       })
       .catch((error) => console.log(error));
