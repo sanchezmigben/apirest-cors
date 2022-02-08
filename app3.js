@@ -81,10 +81,22 @@ async function fetchProduct(id) {
         console.log(data);
 	let product = data;
 	
-	document.getElementById("txtId").value = product._id;
-	document.getElementById("txtName").value = product.name;      
-	document.getElementById("txtPrice").value = product.price;      
-        document.getElementById("txtCategory").value = product.category;
+	 try {
+		 
+		 document.getElementById("txtId").value = id;
+		document.getElementById("txtName").value = product.name;      
+		document.getElementById("txtPrice").value = product.price;      
+		document.getElementById("txtCategory").value = product.category;
+		 
+	  
+	}
+	catch (e) {
+	   // sentencias para manejar cualquier excepción
+	   console.log(e); // pasa el objeto de la excepción al manejador de errores
+	}
+    
+	      
+	
         
       })
       .catch((error) => console.log(error));
