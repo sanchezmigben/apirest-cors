@@ -14,21 +14,12 @@ async function fetchProduct(id) {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        const ul = document.getElementById('products');
-        let products = data;
-        //console.log(products);
-        
-        for(let product of products){
-            let li = createNode('li');
-            let span = createNode('span');
-	    let a = createNode('a');
-	    a.setAttribute('href', "show.html?id=" + product._id);
-	    a.innerText = product._id;	
-            span.innerHTML = `${product.name} ${product.price} ${product.category}`;            
-            append(li, span);
-	    append(li, a);
-            append(ul, li);
-        }
+	let product = data;
+	
+	document.getElementById("txtId").value = product._id;
+	document.getElementById("txtName").value = product.name;      
+	document.getElementById("txtPrice").value = product.price;      
+        document.getElementById("txtCategory").value = product.category;
         
       })
       .catch((error) => console.log(error));
