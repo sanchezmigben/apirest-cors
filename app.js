@@ -36,7 +36,7 @@ async function fetchCreateProduct() {
 
 async function fetchProducts() {
     const response = await fetch(
-      "http://rest-atlas-test.herokuapp.com/products_api",
+      "https://rest-atlas-test.herokuapp.com/products_api",
       {		
         method: "GET",
 		headers: {
