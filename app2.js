@@ -18,7 +18,9 @@ async function fetchCreateProduct() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        
+        const span = document.getElementById('productSpan');
+        let product = data;
+	span.innerHTML = `${product.name} ${product.price} ${product.category}`; 
         
       })
       .catch((error) => console.log(error));
