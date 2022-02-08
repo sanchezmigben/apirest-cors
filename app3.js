@@ -1,6 +1,39 @@
 const btnEdit = document.getElementById("btnEdit");
 btnEdit.addEventListener("click",fetchEditProduct);
 
+const btnDelete = document.getElementById("btnDelete");
+btnDelete.addEventListener("click",fetchDeleteProduct);
+
+async function fetchDeleteProduct() {
+	const idField = document.getElementById("txtId").value;
+	const nameField = document.getElementById("txtName").value;
+	const priceField = document.getElementById("txtPrice").value;
+	const categoryField = document.getElementById("txtCategory").value;
+	console.log(nameField + " " + priceField + " " + categoryField);
+	
+	const newProduct = {name: nameField, price: priceField, category:categoryField};
+	
+    const response = await fetch(
+      "https://rest-atlas-test.herokuapp.com/products/" + idField + "?_method=DELETE",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+		body: JSON.stringify(newProduct)
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert("Product Deleted");
+        window.location.href = "index.html";
+      })
+      .catch((error) => console.log(error));
+  }
+
+
 
 async function fetchEditProduct() {
 	const idField = document.getElementById("txtId").value;
@@ -25,7 +58,7 @@ async function fetchEditProduct() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        
+        alert("Product Edited");
         
       })
       .catch((error) => console.log(error));
