@@ -84,10 +84,12 @@ async function fetchProduct(id) {
 	 try {
 		 
 		 document.getElementById("txtId").value = id;
-		document.getElementById("txtName").value = product.name;      
-		document.getElementById("txtPrice").value = product.price;      
-		document.getElementById("txtCategory").value = product.category;
 		 
+		 if (product != null){
+			document.getElementById("txtName").value = product.name;      
+			document.getElementById("txtPrice").value = product.price;      
+			document.getElementById("txtCategory").value = product.category;
+		 }
 	  
 	}
 	catch (e) {
