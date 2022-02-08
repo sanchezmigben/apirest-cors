@@ -54,7 +54,10 @@ async function fetchProducts() {
         
         for(let product of products){
             let li = createNode('li');
-            let span = createNode('span');           
+            let span = createNode('span');
+	    let a = createNode('a');
+	    a.setAttribute('href', "show.html?id=" + product._id);
+	    a.innerText = product._id;	
             span.innerHTML = `${product.name} ${product.price} ${product.category}`;            
             append(li, span);
             append(ul, li);
