@@ -12,7 +12,7 @@ async function fetchEditProduct() {
 	const newProduct = {name: nameField, price: priceField, category:categoryField};
 	
     const response = await fetch(
-      "https://rest-atlas-test.herokuapp.com/products/idField?_method=PUT",
+      "https://rest-atlas-test.herokuapp.com/products/" + idField + "?_method=PUT",
       {
         method: "POST",
         headers: {
