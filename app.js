@@ -60,6 +60,7 @@ async function fetchProducts() {
 	    a.innerText = product._id;	
             span.innerHTML = `${product.name} ${product.price} ${product.category}`;            
             append(li, span);
+	    append(li, a);
             append(ul, li);
         }
         
